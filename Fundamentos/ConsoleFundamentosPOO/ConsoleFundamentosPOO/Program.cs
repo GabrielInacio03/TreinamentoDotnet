@@ -11,49 +11,46 @@ namespace ConsoleFundamentosPOO
         static void Main(string[] args)
         {
 
-            var a = 1;
+            var a = 0;
 
-            //ternario
-            bool verdadeiro = (a == 1) ? true : false;
-            //condicional if else if e else
-
-            //if (a == 1) Console.WriteLine("entrou na condição if");
-            if (a == 1)
+            //while
+            while(a <= 5)
             {
-                Console.WriteLine("entrou na condição do if");
-                Console.WriteLine("========");
-            }
-            else if(a == 2)
-            {
-                Console.WriteLine("entrou na condição do else if");
-                Console.WriteLine("========");
-            }
-            else
-            {
-                Console.WriteLine("entrou na condição senão, else.");
-                Console.WriteLine("========");
+                Console.WriteLine($"a: {a}");
+                a++;
             }
 
-            //condicional switch
-            var opcao = 0;
-            switch (opcao)
+            //do while
+            //primeiro ele faz a operação e depois verifica os valores
+            do
             {
-                case 1:
-                    Console.WriteLine("opcao 1");
-                    break;
-                case 2:
-                    Console.WriteLine("opcao 2");
-                    break;
-                case 3:
-                    Console.WriteLine("opcao 3");
-                    break;
-                default:
-                    Console.WriteLine("opção 0");
-                    break;
+                Console.WriteLine(a);
+                a++;
+            } while (a <= 5);
+
+            //for
+            int x = 10;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(x);
             }
 
+            //foreach
+            char[] alfabeto = {'A', 'B', 'C', 'D', 'E' };
+            foreach (var letra in alfabeto)
+            {
+                Console.WriteLine($"Letra: {letra}");
+            }
             Console.WriteLine("Olá pessoal");
             Console.Read();
+        }
+        public int loopRecursiva(int a)
+        {
+            Console.WriteLine(a);
+            if (a < 3)
+                loopRecursiva(a++);
+
+            return a;
         }
     }
 }
