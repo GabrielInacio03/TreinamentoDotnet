@@ -8,49 +8,49 @@ namespace ConsoleFundamentosPOO.Testes
 {
     class Loops
     {
-        static void Main(string[] args)
-        {
+        //static void Main(string[] args)
+        //{
 
-            var a = 0;
+        //    var a = 0;
 
-            //while
-            while (a <= 5)
-            {
-                Console.WriteLine($"a: {a}");
-                a++;
-            }
+        //    //while
+        //    while (a <= 5)
+        //    {
+        //        Console.WriteLine($"a: {a}");
+        //        a++;
+        //    }
 
-            //do while
-            //primeiro ele faz a operação e depois verifica os valores
-            do
-            {
-                Console.WriteLine(a);
-                a++;
-            } while (a <= 5);
+        //    //do while
+        //    //primeiro ele faz a operação e depois verifica os valores
+        //    do
+        //    {
+        //        Console.WriteLine(a);
+        //        a++;
+        //    } while (a <= 5);
 
-            //for
-            int x = 10;
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(x);
-            }
+        //    //for
+        //    int x = 10;
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Console.WriteLine(x);
+        //    }
 
-            //foreach
-            char[] alfabeto = { 'A', 'B', 'C', 'D', 'E' };
-            foreach (var letra in alfabeto)
-            {
-                Console.WriteLine($"Letra: {letra}");
-            }
-            Console.WriteLine("Olá pessoal");
-            Console.Read();
-        }
-        public int loopRecursiva(int a)
-        {
-            Console.WriteLine(a);
-            if (a < 3)
-                loopRecursiva(a++);
+        //    //foreach
+        //    char[] alfabeto = { 'A', 'B', 'C', 'D', 'E' };
+        //    foreach (var letra in alfabeto)
+        //    {
+        //        Console.WriteLine($"Letra: {letra}");
+        //    }
+        //    Console.WriteLine("Olá pessoal");
+        //    Console.Read();
+        //}
+        //public int loopRecursiva(int a)
+        //{
+        //    Console.WriteLine(a);
+        //    if (a < 3)
+        //        loopRecursiva(a++);
 
-            return a;
-        }
+        //    return a;
+        //}
     }
 }
