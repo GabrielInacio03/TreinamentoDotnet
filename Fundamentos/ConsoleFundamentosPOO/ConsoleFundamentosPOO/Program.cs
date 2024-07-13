@@ -10,33 +10,35 @@ namespace ConsoleFundamentosPOO
     {
         static void Main(string[] args)
         {
-            //array e collections
-            int[] numeros = new int[3]; //começa sempre por zero 0
-            numeros[0] = 0;
-            numeros[1] = 1;
-            numeros[2] = 2;
+            //mensagem inicial do programa
+            MostrarMensagemNaTela();
 
-            Console.WriteLine("Exibindo array de numero inteiro");
-            Console.WriteLine($"Quantidade: {numeros.Length}");
-            foreach (var n in numeros)
-            {
-                Console.WriteLine(n);
-            }
+            Console.WriteLine("Informe qual tabuada? ");
+            int tab = int.Parse(Console.ReadLine());
+            Tabuada(tab);
 
-            List<string> pessoas = new List<string>();
-            pessoas.Add("Gabriel");
-            pessoas.Add("Maria");
-            pessoas.Add("Miguel");
-
-            Console.WriteLine("Exibindo collection do tipo string");
-            Console.WriteLine($"Quantidade: {pessoas.Count}");
-            foreach (var item in pessoas)
-            {
-                Console.WriteLine(item);
-            }
-
+            Console.WriteLine(calcular());
             Console.Read();
         }
+        public static void MostrarMensagemNaTela()
+        {
+            Console.WriteLine("=================================");
+            Console.WriteLine("Programando na Linguagem C# .Net");
+            Console.WriteLine("=================================");
+        }
         
+        public static int calcular()
+        {
+            var a = 1;
+            var b = 2;
+            return a + b;
+        }
+        public static void Tabuada(int numeroTab)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{numeroTab} x {i} = {numeroTab * i}");
+            }
+        }
     }
 }
