@@ -9,6 +9,7 @@ namespace ConsoleFundamentosPOO
 {
     class Program
     {
+        private const string NOME_DO_PROGRAMA = "Curso Linguagem C#";
         static void Main(string[] args)
         {
             //mensagem inicial do programa
