@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\Arquivos.cs" />
+    <Compile Include="Modelos\CalculoMedia.cs" />
+    <Compile Include="Modelos\Tabuada.cs" />
     <Compile Include="Testes\Loops.cs" />
     <Compile Include="Testes\OperadoresCondicionais.cs" />
     <Compile Include="Program.cs" />
