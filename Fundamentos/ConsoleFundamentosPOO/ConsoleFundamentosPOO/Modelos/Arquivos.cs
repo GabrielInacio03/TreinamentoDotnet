@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace ConsoleFundamentosPOO.Modelos
     {
         public static void LerArquivos(int numeroArquivo)
         {
-            string pathUrlBase = $"C:\\Users\\Inaci\\Documents\\arquivosAulasTeste\\arq{numeroArquivo}.txt";
+            string caminhoArquivos = ConfigurationManager.AppSettings["caminho_arquivos"];
+            string pathUrlBase = caminhoArquivos + $"arq{numeroArquivo}.txt";
             if (File.Exists(pathUrlBase))
             {
                 using (var arquivo = File.OpenText(pathUrlBase))
@@ -25,7 +27,7 @@ namespace ConsoleFundamentosPOO.Modelos
                 }
             }
 
-            string pathUrlBaseProximo = $"C:\\Users\\Inaci\\Documents\\arquivosAulasTeste\\arq{numeroArquivo + 1}.txt";
+            string pathUrlBaseProximo = caminhoArquivos + $"arq{numeroArquivo + 1}.txt";
             if (File.Exists(pathUrlBaseProximo))
                 LerArquivos(numeroArquivo + 1);
         }
