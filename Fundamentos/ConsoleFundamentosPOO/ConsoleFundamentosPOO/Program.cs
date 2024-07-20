@@ -1,4 +1,5 @@
-﻿using ConsoleFundamentosPOO.Modelos;
+﻿using ConsoleFundamentosPOO.Classes;
+using ConsoleFundamentosPOO.Modelos;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,13 @@ namespace ConsoleFundamentosPOO
     {        
         static void Main(string[] args)
         {
-            Menu.MenuDeOpcoes();
+            var listaClientes = Cliente.LerClientes();
+
+            foreach (var item in listaClientes)
+            {
+                Console.WriteLine($"Nome Cliente: {item.Nome}");
+            }
+
             Console.Read();
         }
                        
