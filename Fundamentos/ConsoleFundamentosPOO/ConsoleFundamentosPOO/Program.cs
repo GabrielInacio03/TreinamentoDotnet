@@ -13,13 +13,13 @@ namespace ConsoleFundamentosPOO
     {        
         static void Main(string[] args)
         {
+
+
             var listaClientes = Cliente.LerClientes();
 
-            foreach (var item in listaClientes)
-            {
-                Console.WriteLine($"Nome Cliente: {item.Nome}");
-            }
-
+            //gravar
+            Cliente cliente = new Cliente("TesteGravacao", "1212221212", "133131331");
+            cliente.Gravar(cliente);
             Console.Read();
         }
                        

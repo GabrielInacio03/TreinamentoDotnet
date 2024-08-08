@@ -15,13 +15,43 @@ namespace ConsoleFundamentosPOO.Classes
         public string Telefone;
         public string CPF;
 
+        /// <summary>
+        /// Construtor da classev
+        /// </summary>
+        public Cliente() { }
+
+        /// <summary>
+        /// Construtor com parametros
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="telefone"></param>
+        /// <param name="cPF"></param>
+        public Cliente(string nome, string telefone, string cPF)
+        {
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.CPF = cPF;
+        }
+
         public static string CaminhoBaseClientes()
         {
             return ConfigurationManager.AppSettings["base_dos_clientes"];
         }
-        public void Gravar()
+        public void Gravar(Cliente cliente)
         {
-            //gravar cliente no arquivo txt
+            string linha = ConstruirLinha(cliente);
+            
+            using(StreamWriter sw = new StreamWriter(CaminhoBaseClientes(), true))
+            {
+                if (linha != null)
+                    sw.WriteLine(linha);
+            }
+            
+                
+        }
+        public string ConstruirLinha(Cliente cliente)
+        {
+            return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
         }
         public static List<Cliente> LerClientes()
         {
