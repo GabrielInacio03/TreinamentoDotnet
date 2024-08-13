@@ -37,21 +37,37 @@ namespace ConsoleFundamentosPOO.Classes
         {
             return ConfigurationManager.AppSettings["base_dos_clientes"];
         }
-        public void Gravar(Cliente cliente)
+        
+        public void Gravar()
         {
-            string linha = ConstruirLinha(cliente);
+            this.Olhar();
+            string linha = ConstruirLinha(this);
             
             using(StreamWriter sw = new StreamWriter(CaminhoBaseClientes(), true))
             {
                 if (linha != null)
                     sw.WriteLine(linha);
+
+                sw.Close();
             }
             
                 
         }
+        private void Olhar()
+        {
+            Console.WriteLine($"O cliente {this.CPF} esta sendo gravado");
+        }
         public string ConstruirLinha(Cliente cliente)
         {
             return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
+        }
+        public static void ListarClientesNaTela()
+        {
+            foreach (var item in LerClientes())
+            {
+                Console.WriteLine("-------------------------------------------------------");
+                Console.WriteLine($"Nome: {item.Nome}, Telefone: {item.Telefone}, CPF: {item.CPF};");
+            }
         }
         public static List<Cliente> LerClientes()
         {

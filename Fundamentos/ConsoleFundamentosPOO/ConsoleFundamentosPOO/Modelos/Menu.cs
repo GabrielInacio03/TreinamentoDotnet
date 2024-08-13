@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleFundamentosPOO.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace ConsoleFundamentosPOO.Modelos
         private const int LER_ARQUIVOS = 1;
         private const int TABUADA = 2;
         private const int CALCULO_MEDIA = 3;
+        private const int CADASTRAR_CLIENTE = 4;
+        private const int LISTAR_CLIENTES = 5;
         public static void MenuDeOpcoes()
         {
             string mensagem = "Olá usuário, bem vindo ao program, utilizando programação funcional" +
@@ -20,7 +23,9 @@ namespace ConsoleFundamentosPOO.Modelos
                 "\n0 - sair" +
                 "\n1 - Ler Arquivos" +
                 "\n2 - Tabuada" +
-                "\n3 - Calcular";
+                "\n3 - Calcular" +
+                "\n4 - Cadastrar Cliente" +
+                "\n5 - Listar Clientes";
             while (true)
             {
                 Console.WriteLine("=====================================");
@@ -45,6 +50,25 @@ namespace ConsoleFundamentosPOO.Modelos
                 else if (CALCULO_MEDIA == valor)
                 {
                     CalculoMedia.CalcularMediaAluno();
+                }
+                else if(CADASTRAR_CLIENTE == valor)
+                {
+                    Console.WriteLine("Informe o nome do cliente: ");
+                    string nome = Console.ReadLine();
+
+                    Console.WriteLine("Informe o telefone do cliente: ");
+                    string tel = Console.ReadLine();
+
+                    Console.WriteLine("Informe o cpf do cliente: ");
+                    string cpf = Console.ReadLine();
+
+                    Cliente cliente = new Cliente(nome, tel, cpf);
+                    cliente.Gravar();
+                }
+                else if(LISTAR_CLIENTES == valor)
+                {
+                    Console.WriteLine("CLIENTES >>>");
+                    Cliente.ListarClientesNaTela();
                 }
                 else
                 {
