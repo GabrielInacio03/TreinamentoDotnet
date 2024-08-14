@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Modelos\Arquivos.cs" />
     <Compile Include="Modelos\CalculoMedia.cs" />
     <Compile Include="Modelos\Menu.cs" />

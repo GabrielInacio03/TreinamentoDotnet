@@ -40,24 +40,49 @@ namespace ConsoleFundamentosPOO.Classes
         
         public void Gravar()
         {
+            if (this.GetType() == typeof(Cliente))
+            {
+                GravarCliente();
+            }
+            else
+                GravarUsuario();
+        }
+        public void GravarUsuario()
+        {
             this.Olhar();
-            string linha = ConstruirLinha(this);
             
-            using(StreamWriter sw = new StreamWriter(CaminhoBaseClientes(), true))
+            string linha = ConstruirLinhaUsuario((Usuario)this);
+
+            using (StreamWriter sw = new StreamWriter(Usuario.CaminhoBaseUsuarios(), true))
             {
                 if (linha != null)
                     sw.WriteLine(linha);
 
                 sw.Close();
             }
-            
-                
+        }
+        public void GravarCliente()
+        {
+            this.Olhar();
+            string linha = ConstruirLinhaCliente(this);
+
+            using (StreamWriter sw = new StreamWriter(CaminhoBaseClientes(), true))
+            {
+                if (linha != null)
+                    sw.WriteLine(linha);
+
+                sw.Close();
+            }
         }
         private void Olhar()
         {
             Console.WriteLine($"O cliente {this.CPF} esta sendo gravado");
         }
-        public string ConstruirLinha(Cliente cliente)
+        public static string ConstruirLinhaUsuario(Usuario usuario)
+        {
+            return usuario.Login + ";" + usuario.Senha + ";" + usuario.Nome + ";" + usuario.Telefone + ";" + usuario.CPF + ";";
+        }
+        public string ConstruirLinhaCliente(Cliente cliente)
         {
             return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
         }
