@@ -17,6 +17,7 @@ namespace ConsoleFundamentosPOO.Modelos
         private const int CADASTRAR_CLIENTE = 4;
         private const int LISTAR_CLIENTES = 5;
         private const int CADASTRAR_USUARIO = 6;
+        private const int LISTAR_USUARIOS = 7;
         public static void MenuDeOpcoes()
         {
             string mensagem = "Olá usuário, bem vindo ao program, utilizando programação funcional" +
@@ -27,7 +28,8 @@ namespace ConsoleFundamentosPOO.Modelos
                 "\n3 - Calcular" +
                 "\n4 - Cadastrar Cliente" +
                 "\n5 - Listar Clientes" +
-                "\n6 - Cadastrar Usuarios";
+                "\n6 - Cadastrar Usuarios"+
+                "\n7 - Listar Usuários";
             while (true)
             {
                 Console.WriteLine("=====================================");
@@ -70,7 +72,7 @@ namespace ConsoleFundamentosPOO.Modelos
                 else if(LISTAR_CLIENTES == valor)
                 {
                     Console.WriteLine("CLIENTES >>>");
-                    Cliente.ListarClientesNaTela();
+                    Cliente.ListarNaTela();
                 }else if(CADASTRAR_USUARIO == valor)
                 {
                     
@@ -93,6 +95,11 @@ namespace ConsoleFundamentosPOO.Modelos
                     Usuario usuario = new Usuario { Login = login, Senha = senha, CPF = cpf, Nome = nome, Telefone = tel };
 
                     usuario.Gravar();
+                }
+                else if (LISTAR_USUARIOS == valor)
+                {
+                    Console.WriteLine("USUARIOS >>>");
+                    Usuario.ListarNaTela();
                 }
                 else
                 {

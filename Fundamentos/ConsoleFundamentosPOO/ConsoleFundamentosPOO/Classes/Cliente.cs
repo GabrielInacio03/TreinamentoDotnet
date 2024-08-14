@@ -10,6 +10,7 @@ namespace ConsoleFundamentosPOO.Classes
 {
     public class Cliente
     {
+       
         //propriedades
         public string Nome;
         public string Telefone;
@@ -33,27 +34,17 @@ namespace ConsoleFundamentosPOO.Classes
             this.CPF = cPF;
         }
 
-        public static string CaminhoBaseClientes()
+        public static string CaminhoBase()
         {
             return ConfigurationManager.AppSettings["base_dos_clientes"];
         }
         
         public void Gravar()
         {
-            if (this.GetType() == typeof(Cliente))
-            {
-                GravarCliente();
-            }
-            else
-                GravarUsuario();
-        }
-        public void GravarUsuario()
-        {
             this.Olhar();
-            
-            string linha = ConstruirLinhaUsuario((Usuario)this);
+            string linha = ConstruirLinha(this);
 
-            using (StreamWriter sw = new StreamWriter(Usuario.CaminhoBaseUsuarios(), true))
+            using (StreamWriter sw = new StreamWriter(CaminhoBase(), true))
             {
                 if (linha != null)
                     sw.WriteLine(linha);
@@ -61,43 +52,28 @@ namespace ConsoleFundamentosPOO.Classes
                 sw.Close();
             }
         }
-        public void GravarCliente()
-        {
-            this.Olhar();
-            string linha = ConstruirLinhaCliente(this);
-
-            using (StreamWriter sw = new StreamWriter(CaminhoBaseClientes(), true))
-            {
-                if (linha != null)
-                    sw.WriteLine(linha);
-
-                sw.Close();
-            }
-        }
+        
         private void Olhar()
         {
             Console.WriteLine($"O cliente {this.CPF} esta sendo gravado");
         }
-        public static string ConstruirLinhaUsuario(Usuario usuario)
-        {
-            return usuario.Login + ";" + usuario.Senha + ";" + usuario.Nome + ";" + usuario.Telefone + ";" + usuario.CPF + ";";
-        }
-        public string ConstruirLinhaCliente(Cliente cliente)
+        
+        public string ConstruirLinha(Cliente cliente)
         {
             return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
         }
-        public static void ListarClientesNaTela()
+        public static void ListarNaTela()
         {
-            foreach (var item in LerClientes())
+            foreach (var item in Ler())
             {
                 Console.WriteLine("-------------------------------------------------------");
                 Console.WriteLine($"Nome: {item.Nome}, Telefone: {item.Telefone}, CPF: {item.CPF};");
             }
         }
-        public static List<Cliente> LerClientes()
+        public static List<Cliente> Ler()
         {
+            string pathUrlBase = CaminhoBase();
             var clientes = new List<Cliente>();
-            string pathUrlBase = CaminhoBaseClientes();
             if (File.Exists(pathUrlBase))
             {
                 using (var arquivo = File.OpenText(pathUrlBase))
@@ -106,7 +82,7 @@ namespace ConsoleFundamentosPOO.Classes
                     while ((linha = arquivo.ReadLine()) != null)
                     {
                         //Console.WriteLine(linha);
-                        clientes.Add(AdicionarClienteNaLista(linha));
+                        clientes.Add(AdicionarNaLista(linha));
                     }
 
                 }
@@ -114,7 +90,8 @@ namespace ConsoleFundamentosPOO.Classes
             clientes.RemoveAt(0);
             return clientes;
         }
-        public static Cliente AdicionarClienteNaLista(string linha)
+
+        public static Cliente AdicionarNaLista(string linha)
         {
             //3 posições
             var linhaArray = linha.Split(';').ToArray();
