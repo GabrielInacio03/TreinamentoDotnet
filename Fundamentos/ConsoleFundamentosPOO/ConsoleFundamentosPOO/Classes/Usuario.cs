@@ -25,11 +25,11 @@ namespace ConsoleFundamentosPOO.Classes
         {
             return ConfigurationManager.AppSettings["base_dos_usuarios"];
         }
-        public static string ConstruirLinha(Usuario usuario)
+        public string ConstruirLinha(Usuario usuario)
         {
             return usuario.Login + ";" + usuario.Senha + ";" + usuario.Nome + ";" + usuario.Telefone + ";" + usuario.CPF + ";";
         }
-        public void Gravar()
+        public override void Gravar() //override -> sobreescrevendo 
         {
             string linha = ConstruirLinha(this);
 

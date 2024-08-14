@@ -10,7 +10,9 @@ namespace ConsoleFundamentosPOO.Classes
 {
     public class Cliente
     {
-       
+       /// <summary>
+       /// sealed -> não pode sobreescrever
+       /// </summary>
         //propriedades
         public string Nome;
         public string Telefone;
@@ -39,7 +41,7 @@ namespace ConsoleFundamentosPOO.Classes
             return ConfigurationManager.AppSettings["base_dos_clientes"];
         }
         
-        public void Gravar()
+        public virtual void Gravar() //virtual -> pode ser sobreescrito
         {
             this.Olhar();
             string linha = ConstruirLinha(this);
@@ -58,7 +60,7 @@ namespace ConsoleFundamentosPOO.Classes
             Console.WriteLine($"O cliente {this.CPF} esta sendo gravado");
         }
         
-        public string ConstruirLinha(Cliente cliente)
+        public virtual string ConstruirLinha(Cliente cliente)
         {
             return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
         }
