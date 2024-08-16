@@ -72,7 +72,8 @@ namespace ConsoleFundamentosPOO.Modelos
                 else if(LISTAR_CLIENTES == valor)
                 {
                     Console.WriteLine("CLIENTES >>>");
-                    Cliente.ListarNaTela();
+                    Cliente cliente = new Cliente();
+                    cliente.ListarNaTela();
                 }else if(CADASTRAR_USUARIO == valor)
                 {
                     
@@ -85,21 +86,15 @@ namespace ConsoleFundamentosPOO.Modelos
                     Console.WriteLine("Informe o cpf do cliente: ");
                     string cpf = Console.ReadLine();
 
-                    Console.WriteLine("_________________________________");
-                    Console.WriteLine("Informe o login: ");
-                    string login = Console.ReadLine();
-
-                    Console.WriteLine("Informe sua senha: ");
-                    string senha = Console.ReadLine();
-
-                    Usuario usuario = new Usuario { Login = login, Senha = senha};
+                    Usuario usuario = new Usuario { Nome = nome, CPF = cpf, Telefone = tel};
 
                     usuario.Gravar();
                 }
                 else if (LISTAR_USUARIOS == valor)
                 {
                     Console.WriteLine("USUARIOS >>>");
-                    Usuario.ListarNaTela();
+                    Usuario usuario = new Usuario();
+                    usuario.ListarNaTela();
                 }
                 else
                 {

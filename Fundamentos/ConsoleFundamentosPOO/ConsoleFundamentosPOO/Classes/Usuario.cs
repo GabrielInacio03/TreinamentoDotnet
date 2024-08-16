@@ -11,74 +11,15 @@ namespace ConsoleFundamentosPOO.Classes
 {
     public class Usuario : Base
     {
-        public string Login { get; set; }
-        public string Senha { get; set; }
-        public Usuario() { }
-        public Usuario(string Login, string Senha)
+        public Usuario()
         {
-            this.Login = Login;
-            this.Senha = Senha;
         }
-        public static string CaminhoBase()
+        public Usuario(string nome, string telefone, string cPF)
         {
-            return ConfigurationManager.AppSettings["base_dos_usuarios"];
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.CPF = cPF;
         }
-        public override string ConstruirLinha()
-        {
-            return this.Login + ";" + this.Senha + ";;;;";
-        }
-        public override void Gravar() //override -> sobreescrevendo 
-        {
-            string linha = ConstruirLinha();
-
-            using (StreamWriter sw = new StreamWriter(Usuario.CaminhoBase(), true))
-            {
-                if (linha != null)
-                    sw.WriteLine(linha);
-
-                sw.Close();
-            }
-        }
-        public static void ListarNaTela()
-        {
-            foreach (var item in Ler())
-            {
-                Console.WriteLine("-------------------------------------------------------");
-                Console.WriteLine($"Login: {item.Login}, Senha: {item.Senha}");
-            }
-        }
-        public static List<Usuario> Ler()
-        {
-            string pathUrlBase = CaminhoBase();
-            var usuarios = new List<Usuario>();
-            if (File.Exists(pathUrlBase))
-            {
-                using (var arquivo = File.OpenText(pathUrlBase))
-                {
-                    string linha;
-                    while ((linha = arquivo.ReadLine()) != null)
-                    {
-                        //Console.WriteLine(linha);
-                        usuarios.Add(AdicionarNaLista(linha));
-                    }
-
-                }
-            }
-            usuarios.RemoveAt(0);
-            return usuarios;
-        }
-        public static Usuario AdicionarNaLista(string linha)
-        {
-            //3 posições
-            var linhaArray = linha.Split(';').ToArray();
-            Usuario usuario = new Usuario();
-            usuario.Login = linhaArray[0];
-            usuario.Senha = linhaArray[1];
-            //usuario.Nome = linhaArray[2];
-            //usuario.Telefone = linhaArray[3];
-            //usuario.CPF = linhaArray[4];
-
-            return usuario;
-        }
+        
     }
 }
