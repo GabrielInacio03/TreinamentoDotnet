@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleFundamentosPOO.Classes
 {
-    public class Usuario : IPessoa
+    public class Usuario : Base
     {
         public string Login { get; set; }
         public string Senha { get; set; }
@@ -23,11 +23,11 @@ namespace ConsoleFundamentosPOO.Classes
         {
             return ConfigurationManager.AppSettings["base_dos_usuarios"];
         }
-        public string ConstruirLinha()
+        public override string ConstruirLinha()
         {
             return this.Login + ";" + this.Senha + ";;;;";
         }
-        public void Gravar() //override -> sobreescrevendo 
+        public override void Gravar() //override -> sobreescrevendo 
         {
             string linha = ConstruirLinha();
 

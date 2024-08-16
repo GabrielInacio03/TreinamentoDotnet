@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleFundamentosPOO.Classes
 {
-    public class Cliente : IPessoa
+    public class Cliente : Base
     {
        /// <summary>
        /// sealed -> não pode sobreescrever
