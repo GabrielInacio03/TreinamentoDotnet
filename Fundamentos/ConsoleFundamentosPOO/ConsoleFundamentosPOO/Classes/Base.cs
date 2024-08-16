@@ -10,6 +10,10 @@ namespace ConsoleFundamentosPOO.Classes
 {
     public class Base : IPessoa
     {
+        //propriedades
+        public string Nome;
+        public string Telefone;
+        public string CPF;
         public static string CaminhoBase()
         {
             return ConfigurationManager.AppSettings["base_dos_usuarios"];

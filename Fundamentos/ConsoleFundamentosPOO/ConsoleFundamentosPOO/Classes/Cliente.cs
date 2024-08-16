@@ -14,10 +14,7 @@ namespace ConsoleFundamentosPOO.Classes
        /// <summary>
        /// sealed -> não pode sobreescrever
        /// </summary>
-        //propriedades
-        public string Nome;
-        public string Telefone;
-        public string CPF;
+       
 
         /// <summary>
         /// Construtor da classev
