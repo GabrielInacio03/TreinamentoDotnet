@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleFundamentosPOO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleFundamentosPOO.Classes
 {
-    public class Usuario : Cliente
+    public class Usuario : IPessoa
     {
         public string Login { get; set; }
         public string Senha { get; set; }
@@ -18,20 +19,17 @@ namespace ConsoleFundamentosPOO.Classes
             this.Login = Login;
             this.Senha = Senha;
         }
-        public Usuario(string nome, string telefone, string cPF) : base(nome, telefone, cPF)
-        {
-        }
         public static string CaminhoBase()
         {
             return ConfigurationManager.AppSettings["base_dos_usuarios"];
         }
-        public string ConstruirLinha(Usuario usuario)
+        public string ConstruirLinha()
         {
-            return usuario.Login + ";" + usuario.Senha + ";" + usuario.Nome + ";" + usuario.Telefone + ";" + usuario.CPF + ";";
+            return this.Login + ";" + this.Senha + ";;;;";
         }
-        public override void Gravar() //override -> sobreescrevendo 
+        public void Gravar() //override -> sobreescrevendo 
         {
-            string linha = ConstruirLinha(this);
+            string linha = ConstruirLinha();
 
             using (StreamWriter sw = new StreamWriter(Usuario.CaminhoBase(), true))
             {
@@ -46,7 +44,7 @@ namespace ConsoleFundamentosPOO.Classes
             foreach (var item in Ler())
             {
                 Console.WriteLine("-------------------------------------------------------");
-                Console.WriteLine($"Login: {item.Login}, Senha: {item.Senha}, Nome: {item.Nome}, Telefone: {item.Telefone}, CPF: {item.CPF};");
+                Console.WriteLine($"Login: {item.Login}, Senha: {item.Senha}");
             }
         }
         public static List<Usuario> Ler()
@@ -76,9 +74,9 @@ namespace ConsoleFundamentosPOO.Classes
             Usuario usuario = new Usuario();
             usuario.Login = linhaArray[0];
             usuario.Senha = linhaArray[1];
-            usuario.Nome = linhaArray[2];
-            usuario.Telefone = linhaArray[3];
-            usuario.CPF = linhaArray[4];
+            //usuario.Nome = linhaArray[2];
+            //usuario.Telefone = linhaArray[3];
+            //usuario.CPF = linhaArray[4];
 
             return usuario;
         }

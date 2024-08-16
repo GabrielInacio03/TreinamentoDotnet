@@ -92,7 +92,7 @@ namespace ConsoleFundamentosPOO.Modelos
                     Console.WriteLine("Informe sua senha: ");
                     string senha = Console.ReadLine();
 
-                    Usuario usuario = new Usuario { Login = login, Senha = senha, CPF = cpf, Nome = nome, Telefone = tel };
+                    Usuario usuario = new Usuario { Login = login, Senha = senha};
 
                     usuario.Gravar();
                 }

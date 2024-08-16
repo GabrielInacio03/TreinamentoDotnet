@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleFundamentosPOO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleFundamentosPOO.Classes
 {
-    public class Cliente
+    public class Cliente : IPessoa
     {
        /// <summary>
        /// sealed -> não pode sobreescrever
@@ -41,10 +42,10 @@ namespace ConsoleFundamentosPOO.Classes
             return ConfigurationManager.AppSettings["base_dos_clientes"];
         }
         
-        public virtual void Gravar() //virtual -> pode ser sobreescrito
+        public void Gravar() //virtual -> pode ser sobreescrito
         {
             this.Olhar();
-            string linha = ConstruirLinha(this);
+            string linha = ConstruirLinha();
 
             using (StreamWriter sw = new StreamWriter(CaminhoBase(), true))
             {
@@ -60,9 +61,9 @@ namespace ConsoleFundamentosPOO.Classes
             Console.WriteLine($"O cliente {this.CPF} esta sendo gravado");
         }
         
-        public virtual string ConstruirLinha(Cliente cliente)
+        public string ConstruirLinha()
         {
-            return cliente.Nome+";"+cliente.Telefone+";"+cliente.CPF+";";
+            return this.Nome+";"+ this.Telefone+";"+ this.CPF+";";
         }
         public static void ListarNaTela()
         {
