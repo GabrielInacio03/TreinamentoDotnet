@@ -23,9 +23,19 @@ namespace ConsoleFundamentosPOO
     }
     public class Cachorro : Animal
     {
+        public int idade; //atributo
+        private string vacinou = "true";
+
+        public string Raca { get; set; } //propriedade
+        public bool IsVacina { get { return (vacinou.Equals("true")) ? true : false; } }
+        public string Origem { get; private set; }
         public override void Latir()
         {
             Console.WriteLine("Cachorro latindo... AUHAUHAUH");
+        }
+        public void DefinirOrigem()
+        {
+            this.Origem = "Brasil";
         }
     }
 
