@@ -43,6 +43,11 @@ namespace ConsoleFundamentosPOO
     {        
         static void Main(string[] args)
         {
+            Email.Instancia.Origin = "teste@gmail.com";
+            Email.Instancia.Titulo = "TESTE";
+            Email.Instancia.Corpo = "TESTANDO ENVIO";
+            Email.Instancia.Destino = "teste123@gmail.com";
+            Email.Instancia.EnviarEmail();
             //Sistema
             Menu.MenuDeOpcoes();
 
