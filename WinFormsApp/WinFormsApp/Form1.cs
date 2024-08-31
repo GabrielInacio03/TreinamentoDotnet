@@ -19,7 +19,7 @@ namespace WinFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Inicializando o Formulário!!!");
         }
 
         private void btnOK_Click(object sender, EventArgs e)
