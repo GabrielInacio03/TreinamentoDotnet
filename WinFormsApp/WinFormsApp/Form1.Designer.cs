@@ -32,6 +32,7 @@ namespace WinFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,11 +62,22 @@ namespace WinFormsApp
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Location = new System.Drawing.Point(33, 127);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(254, 44);
+            this.btnAbrir.TabIndex = 3;
+            this.btnAbrir.Text = "Abrir Nova Janela";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 284);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.label1);
@@ -82,6 +94,7 @@ namespace WinFormsApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtResultado;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnAbrir;
     }
 }
 

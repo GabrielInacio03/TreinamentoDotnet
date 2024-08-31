@@ -26,5 +26,13 @@ namespace WinFormsApp
         {
            txtResultado.Text = "OLá, esse é seu primeiro programa WinForms";
         }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            //abrir formulário
+            var formShow = new FormShow();
+            formShow.labelShow.Text = txtResultado.Text;
+            formShow.Show();
+        }
     }
 }
