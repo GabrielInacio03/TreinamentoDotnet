@@ -29,34 +29,40 @@ namespace WinFormsApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTxt = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
+            this.cbxEstados = new System.Windows.Forms.ComboBox();
+            this.lblEstados = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTxt
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.35F);
-            this.label1.Location = new System.Drawing.Point(30, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pressione OK para preencher a caixa de texto";
+            this.lblTxt.AutoSize = true;
+            this.lblTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.35F);
+            this.lblTxt.Location = new System.Drawing.Point(46, 49);
+            this.lblTxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTxt.Name = "lblTxt";
+            this.lblTxt.Size = new System.Drawing.Size(353, 20);
+            this.lblTxt.TabIndex = 0;
+            this.lblTxt.Text = "Pressione OK para preencher a caixa de texto";
             // 
             // txtResultado
             // 
-            this.txtResultado.Location = new System.Drawing.Point(33, 48);
+            this.txtResultado.Location = new System.Drawing.Point(50, 74);
+            this.txtResultado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtResultado.Name = "txtResultado";
-            this.txtResultado.Size = new System.Drawing.Size(254, 20);
+            this.txtResultado.Size = new System.Drawing.Size(379, 26);
             this.txtResultado.TabIndex = 1;
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(33, 74);
+            this.btnOK.Location = new System.Drawing.Point(48, 274);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(254, 46);
+            this.btnOK.Size = new System.Drawing.Size(381, 71);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -64,23 +70,58 @@ namespace WinFormsApp
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(33, 127);
+            this.btnAbrir.Location = new System.Drawing.Point(48, 355);
+            this.btnAbrir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(254, 44);
+            this.btnAbrir.Size = new System.Drawing.Size(381, 68);
             this.btnAbrir.TabIndex = 3;
             this.btnAbrir.Text = "Abrir Nova Janela";
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
+            // cbxEstados
+            // 
+            this.cbxEstados.FormattingEnabled = true;
+           
+            this.cbxEstados.Location = new System.Drawing.Point(50, 153);
+            this.cbxEstados.Name = "cbxEstados";
+            this.cbxEstados.Size = new System.Drawing.Size(381, 28);
+            this.cbxEstados.TabIndex = 4;
+            this.cbxEstados.Text = "[Selecione]";
+            this.cbxEstados.SelectedIndexChanged += new System.EventHandler(this.cbxEstados_SelectedIndexChanged);
+            // 
+            // lblEstados
+            // 
+            this.lblEstados.AutoSize = true;
+            this.lblEstados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.35F);
+            this.lblEstados.Location = new System.Drawing.Point(46, 130);
+            this.lblEstados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstados.Name = "lblEstados";
+            this.lblEstados.Size = new System.Drawing.Size(70, 20);
+            this.lblEstados.TabIndex = 5;
+            this.lblEstados.Text = "Estados";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(52, 189);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(379, 26);
+            this.txtEstado.TabIndex = 6;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 284);
+            this.ClientSize = new System.Drawing.Size(774, 437);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.lblEstados);
+            this.Controls.Add(this.cbxEstados);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtResultado);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTxt);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Aplicação 1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -91,10 +132,13 @@ namespace WinFormsApp
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTxt;
         private System.Windows.Forms.TextBox txtResultado;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.ComboBox cbxEstados;
+        private System.Windows.Forms.Label lblEstados;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }
 
