@@ -46,7 +46,7 @@ namespace WinFormsApp
 
             //maneira intermediária
             var data = from estado in Estado.Lista()
-                       orderby estado.Nome
+                       orderby estado.Id
                        select new
                        {
                            Id = estado.Id,
