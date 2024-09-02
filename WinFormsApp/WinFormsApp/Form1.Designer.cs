@@ -36,6 +36,9 @@ namespace WinFormsApp
             this.cbxEstados = new System.Windows.Forms.ComboBox();
             this.lblEstados = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
+            this.dgvEstados = new System.Windows.Forms.DataGridView();
+            this.lblDataGrid = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstados)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTxt
@@ -82,7 +85,6 @@ namespace WinFormsApp
             // cbxEstados
             // 
             this.cbxEstados.FormattingEnabled = true;
-           
             this.cbxEstados.Location = new System.Drawing.Point(50, 153);
             this.cbxEstados.Name = "cbxEstados";
             this.cbxEstados.Size = new System.Drawing.Size(381, 28);
@@ -109,11 +111,32 @@ namespace WinFormsApp
             this.txtEstado.Size = new System.Drawing.Size(379, 26);
             this.txtEstado.TabIndex = 6;
             // 
+            // dgvEstados
+            // 
+            this.dgvEstados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstados.Location = new System.Drawing.Point(478, 74);
+            this.dgvEstados.Name = "dgvEstados";
+            this.dgvEstados.RowHeadersWidth = 62;
+            this.dgvEstados.RowTemplate.Height = 28;
+            this.dgvEstados.Size = new System.Drawing.Size(582, 349);
+            this.dgvEstados.TabIndex = 7;
+            // 
+            // lblDataGrid
+            // 
+            this.lblDataGrid.AutoSize = true;
+            this.lblDataGrid.Location = new System.Drawing.Point(478, 30);
+            this.lblDataGrid.Name = "lblDataGrid";
+            this.lblDataGrid.Size = new System.Drawing.Size(225, 20);
+            this.lblDataGrid.TabIndex = 8;
+            this.lblDataGrid.Text = "Dados da Coleção de Estados";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 437);
+            this.ClientSize = new System.Drawing.Size(1085, 437);
+            this.Controls.Add(this.lblDataGrid);
+            this.Controls.Add(this.dgvEstados);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.lblEstados);
             this.Controls.Add(this.cbxEstados);
@@ -125,6 +148,7 @@ namespace WinFormsApp
             this.Name = "Form1";
             this.Text = "Aplicação 1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +163,8 @@ namespace WinFormsApp
         private System.Windows.Forms.ComboBox cbxEstados;
         private System.Windows.Forms.Label lblEstados;
         private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.DataGridView dgvEstados;
+        private System.Windows.Forms.Label lblDataGrid;
     }
 }
 

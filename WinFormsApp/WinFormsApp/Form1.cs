@@ -22,16 +22,54 @@ namespace WinFormsApp
         {
             //MessageBox.Show("Inicializando o Formulário!!!");
 
-            cbxEstados.Items.Clear();
-
-            foreach (var item in Estado.Lista())
-            {
-                cbxEstados.Items.Add(item);
-            }
-            cbxEstados.DisplayMember = "Nome"; // Define o que será mostrado no ComboBox
-            cbxEstados.ValueMember = "Id"; // Define o valor real por trás de cada item
+            //Carregamento de Dados
+            CarregandoComboBoxEstados();
+            CarregandoGridViewEstados();
         }
+        public void CarregandoComboBoxEstados()
+        {
+            cbxEstados.DataSource = Estado.Lista();
+            cbxEstados.Text = "[Selecione]";
+            //cbxEstados.Items.Clear();
 
+            //foreach (var item in Estado.Lista())
+            //{
+            //    cbxEstados.Items.Add(item);
+            //}
+        }
+        public void CarregandoGridViewEstados()
+        {
+            //A classe deve ter propriedades e não atributos
+
+            //maneira simples
+            //dgvEstados.DataSource = Estado.Lista();
+
+            //maneira intermediária
+            var data = from estado in Estado.Lista()
+                       orderby estado.Nome
+                       select new
+                       {
+                           Id = estado.Id,
+                           Nome = estado.Nome
+                       };
+            dgvEstados.DataSource = data.ToList();
+            //maneira complexa
+            //dgvEstados.ColumnCount = 2;
+            //dgvEstados.Columns[0].Name = "Id";
+            //dgvEstados.Columns[1].Name = "Nome";
+
+            //var rows = new List<string[]>();
+            //foreach (var item in Estado.Lista())
+            //{
+            //    string[] row1 = new string[] { item.Id.ToString(), item.Nome };
+            //    rows.Add(row1);
+            //}
+
+            //foreach (var item in rows)
+            //{
+            //    dgvEstados.Rows.Add(item);
+            //}
+        }
         private void btnOK_Click(object sender, EventArgs e)
         {
            txtResultado.Text = "OLá, esse é seu primeiro programa WinForms";
@@ -69,6 +107,8 @@ namespace WinFormsApp
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string Telefone { get; set; }
+        public string Endereco { get; set; }
 
         public static List<Estado> Lista()
         {
