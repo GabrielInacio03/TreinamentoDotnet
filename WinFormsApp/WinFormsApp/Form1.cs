@@ -102,6 +102,32 @@ namespace WinFormsApp
                 return false;
             }
         }
+
+        private void novoTextoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formText = new FrmTexto();
+            formText.Show(); 
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmSobre().Show();
+        }
+
+        private void licençaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmLicenca().Show();
+        }
+
+        private void doaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmDoacao().Show();
+        }
     }
     public class Estado
     {

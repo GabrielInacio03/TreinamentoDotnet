@@ -117,7 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de 
+impressos, e vem sendo utilizado desde o século XVI, quando um impressor 
+desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de
+ modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao 
+salto para a editoração eletrônica, permanecendo essencialmente inalterado. 
+Se popularizou na década de 60, quando a Letraset lançou decalques contendo 
+passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a 
+softwares de editoração eletrônica como Aldus PageMaker.</value>
+  </data>
 </root>
