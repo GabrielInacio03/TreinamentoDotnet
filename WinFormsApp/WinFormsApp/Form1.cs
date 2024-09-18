@@ -20,11 +20,17 @@ namespace WinFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            AtualizarMetodo();
             //MessageBox.Show("Inicializando o Formulário!!!");
 
             //Carregamento de Dados
             CarregandoComboBoxEstados();
             CarregandoGridViewEstados();
+        }
+        public void AtualizarMetodo()
+        {
+            lblDiaHoraAtual.Text = "Dia e Hora Atual: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
         }
         public void CarregandoComboBoxEstados()
         {
@@ -127,6 +133,11 @@ namespace WinFormsApp
         private void doaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmDoacao().Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            AtualizarMetodo();
         }
     }
     public class Estado

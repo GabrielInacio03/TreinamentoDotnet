@@ -29,6 +29,7 @@ namespace WinFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTxt = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@ namespace WinFormsApp
             this.licençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblDiaHoraAtual = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstados)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -123,7 +126,7 @@ namespace WinFormsApp
             // dgvEstados
             // 
             this.dgvEstados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstados.Location = new System.Drawing.Point(478, 74);
+            this.dgvEstados.Location = new System.Drawing.Point(552, 172);
             this.dgvEstados.Name = "dgvEstados";
             this.dgvEstados.RowHeadersWidth = 62;
             this.dgvEstados.RowTemplate.Height = 28;
@@ -133,7 +136,7 @@ namespace WinFormsApp
             // lblDataGrid
             // 
             this.lblDataGrid.AutoSize = true;
-            this.lblDataGrid.Location = new System.Drawing.Point(478, 29);
+            this.lblDataGrid.Location = new System.Drawing.Point(548, 149);
             this.lblDataGrid.Name = "lblDataGrid";
             this.lblDataGrid.Size = new System.Drawing.Size(225, 20);
             this.lblDataGrid.TabIndex = 8;
@@ -148,7 +151,7 @@ namespace WinFormsApp
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1146, 33);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -188,29 +191,46 @@ namespace WinFormsApp
             // licençaToolStripMenuItem
             // 
             this.licençaToolStripMenuItem.Name = "licençaToolStripMenuItem";
-            this.licençaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.licençaToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.licençaToolStripMenuItem.Text = "Licença";
             this.licençaToolStripMenuItem.Click += new System.EventHandler(this.licençaToolStripMenuItem_Click);
             // 
             // doaçãoToolStripMenuItem
             // 
             this.doaçãoToolStripMenuItem.Name = "doaçãoToolStripMenuItem";
-            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.doaçãoToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.doaçãoToolStripMenuItem.Text = "Doação";
             this.doaçãoToolStripMenuItem.Click += new System.EventHandler(this.doaçãoToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem
             // 
             this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
+            // 
+            // lblDiaHoraAtual
+            // 
+            this.lblDiaHoraAtual.AutoSize = true;
+            this.lblDiaHoraAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaHoraAtual.Location = new System.Drawing.Point(696, 44);
+            this.lblDiaHoraAtual.Name = "lblDiaHoraAtual";
+            this.lblDiaHoraAtual.Size = new System.Drawing.Size(382, 26);
+            this.lblDiaHoraAtual.TabIndex = 10;
+            this.lblDiaHoraAtual.Text = "Dia e Hora Atual: 01/01/0001 00:00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 437);
+            this.ClientSize = new System.Drawing.Size(1146, 533);
+            this.Controls.Add(this.lblDiaHoraAtual);
             this.Controls.Add(this.lblDataGrid);
             this.Controls.Add(this.dgvEstados);
             this.Controls.Add(this.txtEstado);
@@ -253,6 +273,8 @@ namespace WinFormsApp
         private System.Windows.Forms.ToolStripMenuItem licençaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.Label lblDiaHoraAtual;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
