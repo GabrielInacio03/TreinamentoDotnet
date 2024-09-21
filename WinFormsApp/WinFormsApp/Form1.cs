@@ -139,6 +139,11 @@ namespace WinFormsApp
         {
             AtualizarMetodo();
         }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmCadastro().Show();
+        }
     }
     public class Estado
     {

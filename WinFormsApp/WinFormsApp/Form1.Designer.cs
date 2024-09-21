@@ -49,6 +49,7 @@ namespace WinFormsApp
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDiaHoraAtual = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstados)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +160,8 @@ namespace WinFormsApp
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoTextoToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.sairToolStripMenuItem,
+            this.cadastroToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(91, 29);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -167,14 +169,14 @@ namespace WinFormsApp
             // novoTextoToolStripMenuItem
             // 
             this.novoTextoToolStripMenuItem.Name = "novoTextoToolStripMenuItem";
-            this.novoTextoToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.novoTextoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.novoTextoToolStripMenuItem.Text = "Novo Texto";
             this.novoTextoToolStripMenuItem.Click += new System.EventHandler(this.novoTextoToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -224,6 +226,13 @@ namespace WinFormsApp
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -275,6 +284,7 @@ namespace WinFormsApp
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Label lblDiaHoraAtual;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
     }
 }
 

@@ -58,6 +58,12 @@
     <Compile Include="FormShow.Designer.cs">
       <DependentUpon>FormShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastro.Designer.cs">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDoacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,7 @@
     <Compile Include="FrmTexto.Designer.cs">
       <DependentUpon>FrmTexto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ErrorDeProposito.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -89,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormShow.resx">
       <DependentUpon>FormShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadastro.resx">
+      <DependentUpon>FrmCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDoacao.resx">
       <DependentUpon>FrmDoacao.cs</DependentUpon>
