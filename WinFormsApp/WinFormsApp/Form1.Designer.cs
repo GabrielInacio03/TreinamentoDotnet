@@ -30,6 +30,7 @@ namespace WinFormsApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblTxt = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
@@ -43,13 +44,16 @@ namespace WinFormsApp
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licençaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDiaHoraAtual = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnNotificacao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstados)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -169,16 +173,23 @@ namespace WinFormsApp
             // novoTextoToolStripMenuItem
             // 
             this.novoTextoToolStripMenuItem.Name = "novoTextoToolStripMenuItem";
-            this.novoTextoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.novoTextoToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
             this.novoTextoToolStripMenuItem.Text = "Novo Texto";
             this.novoTextoToolStripMenuItem.Click += new System.EventHandler(this.novoTextoToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
@@ -227,18 +238,40 @@ namespace WinFormsApp
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cadastroToolStripMenuItem
+            // notifyIcon
             // 
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Meu programa \r\nlaboratório";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnNotificacao
+            // 
+            this.btnNotificacao.Location = new System.Drawing.Point(789, 93);
+            this.btnNotificacao.Name = "btnNotificacao";
+            this.btnNotificacao.Size = new System.Drawing.Size(289, 35);
+            this.btnNotificacao.TabIndex = 12;
+            this.btnNotificacao.Text = "Dar Notificação";
+            this.btnNotificacao.UseVisualStyleBackColor = true;
+            this.btnNotificacao.Click += new System.EventHandler(this.btnNotificacao_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 533);
+            this.Controls.Add(this.btnNotificacao);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDiaHoraAtual);
             this.Controls.Add(this.lblDataGrid);
             this.Controls.Add(this.dgvEstados);
@@ -250,6 +283,7 @@ namespace WinFormsApp
             this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.lblTxt);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
@@ -285,6 +319,9 @@ namespace WinFormsApp
         private System.Windows.Forms.Label lblDiaHoraAtual;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNotificacao;
     }
 }
 

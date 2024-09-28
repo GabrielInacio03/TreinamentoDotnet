@@ -144,6 +144,21 @@ namespace WinFormsApp
         {
             new FrmCadastro().Show();
         }
+
+        private void notifyIcon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Cliquei no Icone");
+        }
+
+        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dois Cliqueis no Icone");
+        }
+
+        private void btnNotificacao_Click(object sender, EventArgs e)
+        {
+            notifyIcon.ShowBalloonTip(10, "Notificação", "Você foi notificação pelo NotifyIcon", ToolTipIcon.Info);
+        }
     }
     public class Estado
     {

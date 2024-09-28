@@ -29,6 +29,7 @@ namespace WinFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLicenca));
             this.btnLicenca = new System.Windows.Forms.Button();
             this.txtLicenca = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@ namespace WinFormsApp
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtLicenca);
             this.Controls.Add(this.btnLicenca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLicenca";
             this.Text = "FrmSilenca";
             this.ResumeLayout(false);
